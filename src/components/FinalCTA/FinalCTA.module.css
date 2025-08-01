@@ -1,0 +1,59 @@
+.ctaSection {
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #f9f9f9 0%, #f2f2f2 100%);
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaBtn {
+  padding: 14px 32px;
+  font-size: 18px;
+  background: #2b00ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background 0.3s;
+}
+
+.ctaBtn:hover {
+  background: #4800ff;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .ctaSection {
+    padding: 80px 20px;
+  }
+}
