@@ -105,10 +105,14 @@ export default function Header() {
       </header>
 
       {/* BACKDROP */}
-      <div
+      {/* <div
         className={`${css.backdrop} ${isMenuOpen ? css.backdropOpen : ""}`}
         onClick={() => dispatch(closeMenu())}
-      />
+        
+      /> */}
+      {isMenuOpen && (
+        <div className={css.backdrop} onClick={() => dispatch(closeMenu())} />
+      )}
     </>
   );
 }

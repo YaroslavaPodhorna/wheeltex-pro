@@ -6,11 +6,10 @@ body {
   margin: 0;
   overflow-x: hidden;
   position: relative;
-
   background: linear-gradient(135deg, #f5f7ff 0%, #eef2ff 40%, #dbe9ff 100%);
 }
 
-/* мягкое “свечение” поверх градиента */
+/* мягкое "свечение" поверх градиента */
 body::before {
   content: "";
   position: fixed;
@@ -31,9 +30,10 @@ body::before {
       transparent 50%
     );
   animation: floatGlow 14s ease-in-out infinite;
-  z-index: -1;
+  z-index: -100; /* ✅ Змінено з -1 на -100 */
   filter: blur(1px);
   opacity: 0.9;
+  pointer-events: none; /* ✅ Додано - не блокує кліки */
 }
 
 /* тонкое движение */
@@ -47,6 +47,17 @@ body::before {
   100% {
     transform: translate3d(0, 0, 0);
   }
+}
+
+/* === APP WRAPPER === */
+.app {
+  position: relative;
+  z-index: 1; /* ✅ Додано - весь контент поверх body::before */
+}
+
+.main {
+  position: relative;
+  z-index: 1;
 }
 
 /* === PAGE LAYOUT === */

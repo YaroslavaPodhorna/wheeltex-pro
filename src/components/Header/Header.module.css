@@ -77,7 +77,7 @@
   padding-top: 80px;
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 2000;
+  z-index: 10000; /* ✅ Вище за backdrop */
   display: flex;
   flex-direction: column;
   box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
@@ -187,6 +187,7 @@
   align-items: center;
   gap: 6px;
   position: relative;
+  z-index: 10001; /* ✅ Найвищий z-index */
 }
 
 .burger {
@@ -199,7 +200,6 @@
   justify-content: center;
   align-items: flex-end;
   cursor: pointer;
-  z-index: 2100;
   padding: 0;
   gap: 6px;
 }
@@ -248,37 +248,21 @@
 }
 
 /* ================= BACKDROP ================= */
-/* .backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1500;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-} */
-
-/* ================= BACKDROP ================= */
 .backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1900;
+  z-index: 9998; /* ✅ Ще нижче */
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
+  pointer-events: none; /* ✅ КЛЮЧОВЕ - не блокує кліки */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .backdropOpen {
   opacity: 1;
-  pointer-events: auto;
+  visibility: visible;
+  pointer-events: auto; /* ✅ Включаємо кліки тільки коли відкрито */
 }
 
 /* ================= MOBILE (max-width: 767px) ================= */
@@ -323,6 +307,7 @@
     box-shadow: none;
     flex-direction: row;
     overflow: visible;
+    z-index: auto;
   }
 
   .navLinks {
@@ -356,6 +341,7 @@
   }
 
   .navLink:hover {
+    background: transparent;
     color: #e10600;
   }
 
@@ -364,11 +350,18 @@
   }
 
   .navLinkActive {
+    background: transparent;
     color: #e10600;
   }
 
   .navLinkActive::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
     width: 100%;
+    background: #e10600;
   }
 
   .mobileContacts {

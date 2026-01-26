@@ -13,7 +13,6 @@
     "@emailjs/browser": "^4.4.1",
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.11.0",
-    "emailjs-com": "^3.2.0",
     "formik": "^2.4.6",
     "framer-motion": "^12.23.12",
     "modern-normalize": "^3.0.1",
