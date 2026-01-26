@@ -1,0 +1,160 @@
+.filterBar {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* ===== SEARCH ===== */
+.searchContainer {
+  position: relative;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+/* ===== SELECTS ===== */
+.select {
+  padding: 0.75rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  background: white;
+  min-width: 140px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ===== NEW BUTTON ===== */
+.newButton {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.newButton:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.newButton:active {
+  transform: translateY(0);
+}
+
+.buttonIcon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.buttonText {
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Mobile (до 767px) */
+@media (max-width: 767px) {
+  .filterBar {
+    padding: 1rem;
+  }
+
+  .filterGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .select {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .newButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .buttonText {
+    display: block;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .filterGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .searchContainer {
+    grid-column: 1 / -1;
+  }
+
+  .newButton {
+    grid-column: 2;
+    justify-self: end;
+  }
+}
+
+/* Small Desktop (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .filterGrid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .filterGrid {
+    grid-template-columns: 2fr 1fr 1fr auto;
+  }
+}

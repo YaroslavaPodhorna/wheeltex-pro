@@ -1,0 +1,154 @@
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  /* font-size: 34px; */
+  font-weight: 800;
+  color: #1f1f1f;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.accordionContainer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .accordionContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+.accordionItem {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.accordionItem:hover {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Trigger */
+.trigger {
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 18px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+.icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, background 0.3s ease, border 0.3s ease;
+}
+
+.trigger:hover .icon {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.active .icon {
+  transform: rotate(180deg);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* PANEL */
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.35s ease;
+  padding: 0 18px;
+}
+
+.open {
+  max-height: 999px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 0 18px 18px;
+}
+
+.text {
+  padding: 14px 0 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+  white-space: pre-line;
+}
+
+/* MOBILE */
+@media (max-width: 479px) {
+  .title {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+
+  .trigger {
+    padding: 16px 14px;
+    font-size: 15px;
+  }
+
+  .panel {
+    padding: 0 14px;
+  }
+
+  .open {
+    padding: 0 14px 18px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 480px) and (max-width: 1023px) {
+  .title {
+    font-size: 30px;
+    margin-bottom: 34px;
+  }
+
+  .trigger {
+    padding: 18px 16px;
+    font-size: 16px;
+  }
+
+  .panel {
+    padding: 0 16px;
+  }
+
+  .open {
+    padding: 0 16px 18px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+}

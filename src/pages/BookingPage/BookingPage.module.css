@@ -1,0 +1,143 @@
+.bookingPage {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #f8f9fb;
+  border-radius: 16px;
+  border: 1px solid #e4e6eb;
+  font-family: "Inter", sans-serif;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #1e293b;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: #ffffff;
+  transition: 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* Date picker */
+.datePicker {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Button */
+.submitBtn {
+  background: #2563eb;
+  color: #fff;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submitBtn:hover {
+  background: #1d4ed8;
+}
+
+.submitBtn:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.error {
+  font-size: 12px;
+  color: #ef4444;
+}
+
+.success {
+  text-align: center;
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bookingPage {
+    margin: 20px auto;
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookingPage {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .submitBtn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

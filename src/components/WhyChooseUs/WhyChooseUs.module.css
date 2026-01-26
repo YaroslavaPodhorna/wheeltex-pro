@@ -1,102 +1,141 @@
 .why {
-  /* padding: 20px 20px;
-  background: linear-gradient(180deg, #f9f9f9 0%, #f2f2f2 100%);
-  text-align: center; */
-  padding: 50px 20px;
-  background: linear-gradient(180deg, #f9f9f9 0%, #f2f2f2 100%);
+  padding: 80px 0;
   text-align: center;
+  /* background: radial-gradient(
+    circle at top,
+    #ffffff 0%,
+    #f6f6f6 60%,
+    #f0f0f0 100%
+  ); */
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 18px;
 }
+
 .title {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 12px;
+  /* font-size: 38px; */
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+  color: #111;
 }
 
 .subtitle {
   font-size: 16px;
   color: #555;
-  max-width: 440px;
-  margin: 0 auto 40px;
-  line-height: 1.5;
+  max-width: 640px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 26px;
 }
 
+/* ---------------- CARD ---------------- */
 .card {
   background: #fff;
-  border-radius: 20px;
-  padding: 32px 24px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-radius: 22px;
+  padding: 34px 26px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0, 87, 255, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------------- ICON ---------------- */
+.iconWrap {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(224, 6, 0, 0.15),
+    rgba(0, 87, 255, 0.15)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
 }
 
 .icon {
-  font-size: 56px;
-  color: #3a3a3a;
-  margin-bottom: 16px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 32px;
+  color: #e10600;
+  transition: transform 0.35s ease, color 0.35s ease;
 }
+
 .card:hover .icon {
   transform: scale(1.15);
   color: #0057ff;
 }
+
+/* ---------------- TEXT ---------------- */
 .cardTitle {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   margin-bottom: 10px;
   color: #111;
 }
 
 .cardDesc {
-  font-size: 14px;
+  font-size: 15px;
   color: #666;
-  line-height: 1.5;
-  max-width: 260px;
+  line-height: 1.7;
+  max-width: 360px;
   margin: 0 auto;
 }
 
-/* Tablet */
+/* ---------------- TABLET ---------------- */
 @media (min-width: 768px) {
   .why {
-    padding: 100px 40px;
+    padding: 100px 0;
   }
 
-  .title {
-    font-size: 32px;
-  }
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    gap: 30px;
   }
+
+  .card {
+    padding: 38px 32px;
+  }
+
+  .iconWrap {
+    width: 90px;
+    height: 90px;
+  }
+
   .icon {
-    font-size: 64px;
+    font-size: 34px;
   }
 
   .cardTitle {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
-/* Desktop */
+/* ---------------- DESKTOP ---------------- */
 @media (min-width: 1200px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container {
+    padding: 0 28px;
   }
 }

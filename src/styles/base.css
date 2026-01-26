@@ -1,20 +1,94 @@
+/* === BASE + GLOBAL BACKGROUND === */
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: var(--background);
-  color: var(--black);
+  font-family: "Montserrat", system-ui, sans-serif;
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+
+  background: linear-gradient(135deg, #f5f7ff 0%, #eef2ff 40%, #dbe9ff 100%);
 }
-html {
-  scroll-behavior: smooth;
+
+/* мягкое “свечение” поверх градиента */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.9),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.7),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(255, 255, 255, 0.55),
+      transparent 50%
+    );
+  animation: floatGlow 14s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(1px);
+  opacity: 0.9;
 }
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+
+/* тонкое движение */
+@keyframes floatGlow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(50px, -35px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* === PAGE LAYOUT === */
+.page {
+  padding-block: clamp(32px, 6vw, 64px);
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 24px);
+}
+
+.section {
+  margin-bottom: clamp(48px, 8vw, 72px);
+}
+
+/* === TYPOGRAPHY === */
+h1 {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* === ACCENT === */
+.gradientText {
+  background: linear-gradient(90deg, var(--blue), var(--blue-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -1,228 +1,420 @@
+/* ================= HEADER ================= */
 .header {
-  width: 100%;
-  background: white;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* ===== Container ===== */
-.container {
+.headerInner {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0 16px;
 }
 
-/* ===== Logo ===== */
+/* ================= LOGO ================= */
 .logoWrapper {
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo {
-  height: 36px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-.logoTextBlock {
+.logoText {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .logoMain {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 800;
   color: #111;
+  letter-spacing: -0.3px;
 }
 
 .logoRed {
-  color: red;
+  color: #e10600;
 }
 
 .logoSub {
   font-size: 10px;
+  color: #666;
   font-weight: 500;
-  color: #111;
-  max-width: 100px;
-  white-space: normal; /* дозволяємо перенос */
+  margin-top: 2px;
+  line-height: 1.1;
 }
 
-/* ===== Navigation ===== */
+.logoSubAccent {
+  display: block;
+}
+
+/* ================= NAV MOBILE ================= */
 .nav {
   position: fixed;
   top: 0;
   right: 0;
+  width: 85%;
+  max-width: 320px;
+  height: 100vh;
+  background: #fff;
+  padding: 24px;
+  padding-top: 80px;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  height: 100vh;
-  width: 240px;
-  gap: 32px;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+  overflow-y: auto;
 }
 
-.nav.open {
+.navOpen {
   transform: translateX(0);
 }
 
-.nav a {
-  color: #1a1a1a;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.nav a:hover {
-  color: #0057ff;
-}
-
-.active {
-  color: #0057ff;
-}
-
-/* ===== Book Button ===== */
-.bookBtn {
-  padding: 10px 20px;
-  background: #0057ff;
-  color: white !important;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 16px;
-  transition: background 0.3s;
-}
-
-.bookBtn:hover {
-  background: #0040cc;
-}
-
-/* ===== Burger ===== */
-.burger {
+/* ================= NAV LINKS ================= */
+.navLinks {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
+  gap: 4px;
+}
+
+.navLink,
+.navLinkActive {
+  padding: 16px 20px;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  background: #f5f5f5;
+  color: #e10600;
+}
+
+.navLinkActive {
+  background: linear-gradient(135deg, #fff0f0 0%, #ffe8e8 100%);
+  color: #e10600;
+}
+
+.navLinkActive::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: #e10600;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ================= MOBILE CONTACTS ================= */
+.mobileContacts {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 2px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobileContacts a,
+.mobileContacts span {
+  font-size: 14px;
+  color: #555;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.mobileContacts a:hover {
+  background: #f5f5f5;
+  color: #e10600;
+}
+
+/* ================= DESKTOP CONTACTS ================= */
+.contacts {
+  display: none;
+  align-items: center;
+  gap: 18px;
+  font-size: 14px;
+}
+
+.contacts a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.25s ease;
+}
+
+.contacts a:hover {
+  color: #e10600;
+}
+
+.schedule {
+  color: #666;
+  font-size: 13px;
+}
+
+/* ================= BURGER ================= */
+.burgerWrapper {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.burger {
+  width: 32px;
+  height: 24px;
   background: none;
   border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
   cursor: pointer;
+  z-index: 2100;
   padding: 0;
-  z-index: 1100;
+  gap: 6px;
 }
 
 .burger span {
   display: block;
   height: 3px;
-  width: 100%;
-  background: #1a1a1a;
+  background: #111;
   border-radius: 3px;
-  transition: 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
 }
 
-.burger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+.burger span:nth-child(1) {
+  width: 100%;
 }
-.burger.active span:nth-child(2) {
+
+.burger span:nth-child(2) {
+  width: 75%;
+}
+
+.burger span:nth-child(3) {
+  width: 100%;
+}
+
+.burger:hover span {
+  width: 100%;
+  background: #e10600;
+}
+
+.burgerActive span {
+  width: 100% !important;
+}
+
+.burgerActive span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burgerActive span:nth-child(2) {
   opacity: 0;
-}
-.burger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-.contacts {
-  display: none;
-  gap: 16px;
-  align-items: center;
-  font-size: 14px;
+  transform: translateX(20px);
 }
 
-.contacts a {
-  color: #111;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+.burgerActive span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-.contacts a:hover {
-  color: #0057ff;
+/* ================= BACKDROP ================= */
+/* .backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+  animation: fadeIn 0.3s ease;
 }
 
-.schedule {
-  color: #555;
-  font-size: 13px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+
+/* ================= BACKDROP ================= */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
-/* Мобільне меню контакти */
-.mobileContacts {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 14px;
-  text-align: center;
+.backdropOpen {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.mobileContacts a {
-  color: #111;
-  text-decoration: none;
+/* ================= MOBILE (max-width: 767px) ================= */
+@media (max-width: 767px) {
+  .burgerWrapper {
+    display: flex;
+  }
 }
-/* ===== Tablet ===== */
+
+/* ================= TABLET (768px+) ================= */
 @media (min-width: 768px) {
-  .burger {
+  .headerInner {
+    height: 76px;
+    padding: 0 24px;
+  }
+
+  .logo {
+    height: 46px;
+    width: 46px;
+  }
+
+  .logoMain {
+    font-size: 19px;
+  }
+
+  .logoSub {
+    font-size: 11px;
+  }
+
+  .burgerWrapper,
+  .backdrop {
     display: none;
   }
 
   .nav {
     position: static;
-    flex-direction: row;
-    background: transparent;
-    height: auto;
-    width: auto;
-    gap: 28px;
     transform: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    flex-direction: row;
+    overflow: visible;
   }
 
-  .bookBtn {
-    padding: 8px 16px;
+  .navLinks {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .navLink,
+  .navLinkActive {
+    padding: 0;
     font-size: 15px;
+    font-weight: 700;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .navLink::before,
+  .navLinkActive::before {
+    display: none;
+  }
+
+  .navLink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 0;
+    background: #e10600;
+    transition: width 0.25s ease;
+  }
+
+  .navLink:hover {
+    color: #e10600;
+  }
+
+  .navLink:hover::after {
+    width: 100%;
+  }
+
+  .navLinkActive {
+    color: #e10600;
+  }
+
+  .navLinkActive::after {
+    width: 100%;
+  }
+
+  .mobileContacts {
+    display: none;
+  }
+
+  .contacts {
+    display: flex;
   }
 }
 
-/* ===== Desktop ===== */
+/* ================= DESKTOP (1024px+) ================= */
 @media (min-width: 1024px) {
+  .headerInner {
+    height: 80px;
+    padding: 0 32px;
+  }
+
   .logo {
-    height: 44px;
+    height: 50px;
+    width: 50px;
   }
 
   .logoMain {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .logoSub {
     font-size: 12px;
   }
 
-  .nav {
-    gap: 82px;
+  .navLinks {
+    gap: 36px;
   }
 
-  .bookBtn {
-    padding: 10px 20px;
+  .navLink,
+  .navLinkActive {
     font-size: 16px;
   }
+
   .contacts {
-    display: flex;
+    gap: 20px;
+    font-size: 15px;
   }
 
-  .mobileContacts {
-    display: none;
+  .schedule {
+    font-size: 14px;
   }
 }

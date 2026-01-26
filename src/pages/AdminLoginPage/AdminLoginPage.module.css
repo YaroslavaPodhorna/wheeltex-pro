@@ -1,0 +1,104 @@
+/* Мобілка */
+.loginPage {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px;
+  background: #f8f9fc;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.loginPage h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.formGroup label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.formGroup input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.formGroup input:focus {
+  border-color: #2b00ff;
+  outline: none;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+}
+
+button {
+  background: #2b00ff;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #4800ff;
+}
+
+/* === Tablet === */
+@media (min-width: 768px) {
+  .loginPage {
+    max-width: 500px;
+    padding: 30px;
+  }
+
+  .loginPage h1 {
+    font-size: 28px;
+  }
+
+  .formGroup input {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+}
+
+/* === Desktop === */
+@media (min-width: 1024px) {
+  .loginPage {
+    max-width: 600px;
+    padding: 40px;
+  }
+
+  .loginPage h1 {
+    font-size: 32px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 14px;
+  }
+}

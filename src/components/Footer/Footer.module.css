@@ -5,6 +5,7 @@
   font-size: 14px;
 }
 
+/* ===== LAYOUT ===== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -13,7 +14,7 @@
   gap: 32px;
 }
 
-/* Logo & About */
+/* ===== LOGO ===== */
 .logoBlock {
   display: flex;
   flex-direction: column;
@@ -21,54 +22,184 @@
   text-align: center;
 }
 
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .logo {
-  height: 50px;
-  margin-bottom: 12px;
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.logoText {
+  line-height: 1.1;
+}
+
+.logoMain {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
 }
 
 .logoRed {
-  color: red;
+  color: #e63946;
 }
 
 .about {
-  max-width: 280px;
+  max-width: 320px;
   line-height: 1.5;
   font-size: 13px;
   color: #ddd;
+  margin-top: 8px;
 }
 
-/* Contacts */
+/* ===== CONTACTS ===== */
 .contacts {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   text-align: center;
 }
 
 .contacts h3 {
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .contacts a,
 .contacts span {
   color: #ddd;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .contacts a:hover {
   color: #fff;
 }
 
-/* Map */
-.map iframe {
-  border-radius: 12px;
-  overflow: hidden;
+/* ===== SOCIALS ===== */
+.socialsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
 }
 
-/* Bottom line */
+.socialTitle {
+  font-size: 14px;
+  color: #fff;
+}
+
+.socialLink {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px);
+}
+
+/* Tooltip (desktop only) */
+.tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.socialLink:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.facebook {
+  background: #1877f2;
+}
+
+.instagram {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fdf497 0%,
+    #fdf497 10%,
+    #fd5949 45%,
+    #d6249f 70%,
+    #285aeb 100%
+  );
+}
+
+/* ===== MAP ===== */
+.map {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.map iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  display: block;
+}
+
+.mapOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.35s ease;
+}
+
+.map:hover .mapOverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mapLink {
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: #4d5ae5;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.mapLink:hover {
+  background: #3c46c5;
+  transform: scale(1.05);
+}
+
+/* ===== BOTTOM ===== */
 .bottom {
   text-align: center;
   margin-top: 20px;
@@ -78,7 +209,29 @@
   padding-top: 12px;
 }
 
-/* Tablet */
+/* ===== MOBILE FIXES ===== */
+@media (max-width: 767px) {
+  .tooltip {
+    display: none;
+  }
+
+  .socialLink {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mapOverlay {
+    opacity: 1;
+    transform: none;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.2)
+    );
+  }
+}
+
+/* ===== TABLET ===== */
 @media (min-width: 768px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
@@ -93,15 +246,23 @@
   .contacts {
     text-align: left;
   }
+
+  .socialsRow {
+    justify-content: flex-start;
+  }
+
+  .map iframe {
+    height: 220px;
+  }
 }
 
-/* Desktop */
+/* ===== DESKTOP ===== */
 @media (min-width: 1200px) {
   .footer {
     padding: 60px 40px 20px;
   }
 
-  .about {
-    max-width: 320px;
+  .map iframe {
+    height: 240px;
   }
 }

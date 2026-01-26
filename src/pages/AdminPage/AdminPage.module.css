@@ -1,0 +1,112 @@
+/* ===== MAIN LAYOUT ===== */
+.adminPage {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* ===== LOADING & ERROR STATES ===== */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+  color: #6b7280;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Mobile First (до 768px) */
+@media (max-width: 767px) {
+  .adminPage {
+    padding: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+  }
+  .loadMoreSection {
+    margin-top: 16px;
+    padding: 16px;
+  }
+
+  .loadMoreButton {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .paginationInfo {
+    font-size: 12px;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .adminPage {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.875rem;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .adminPage {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+  .adminPage {
+    padding: 2rem;
+  }
+}

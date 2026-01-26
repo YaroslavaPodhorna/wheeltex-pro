@@ -1,186 +1,126 @@
-// import React from "react";
-// import { motion } from "framer-motion";
-// import css from "../ServicesSection/ServicesSection.module.css";
-
-// import {
-//   FaTools,
-//   FaTruckPickup,
-//   FaBalanceScale,
-//   FaOilCan,
-//   FaCarSide,
-// } from "react-icons/fa";
-
-// const services = [
-//   {
-//     title: "Hunter 3D Alignment",
-//     description:
-//       "Ultimate precision with our advanced Hunter 3D alignment system for all vehicle types.",
-//     image: "/public/hunter.jpg", // фото
-//     highlight: true,
-//   },
-//   {
-//     title: "Passenger Car Alignment",
-//     description:
-//       "Ensure smooth and safe driving with our precise passenger car alignment.",
-//     icon: <FaTools />,
-//   },
-//   {
-//     title: "Truck & SUV Alignment",
-//     description:
-//       "Professional alignment for trucks, SUVs, and heavy-duty vehicles.",
-//     icon: <FaTruckPickup />,
-//   },
-//   {
-//     title: "Tire Balancing & Rotation",
-//     description:
-//       "Extend tire life and improve handling with our balancing and rotation services.",
-//     icon: <FaBalanceScale />,
-//   },
-//   {
-//     title: "Oil Change Service",
-//     description:
-//       "Keep your engine healthy with our quick and reliable oil change.",
-//     icon: <FaOilCan />,
-//   },
-//   {
-//     title: "Tire Mounting",
-//     description: "Fast and professional tire mounting for any type of vehicle.",
-//     icon: <FaCarSide />,
-//   },
-// ];
-
-// export default function ServicesSection({ preview = false }) {
-//   const displayedServices = preview ? services.slice(0, 3) : services;
-
-//   return (
-//     <section className={css.services} id="services">
-//       <div className={css.container}>
-//         <h2 className={css.title}>Our Services</h2>
-//         <p className={css.subtitle}>
-//           Professional wheel alignment, tire and oil services using cutting-edge
-//           Hunter 3D technology.
-//         </p>
-
-//         <div className={css.cards}>
-//           {displayedServices.map((service, index) => (
-//             <motion.div
-//               key={index}
-//               className={`${css.card} ${
-//                 service.highlight ? css.highlight : ""
-//               }`}
-//               initial={{ opacity: 0, y: 50 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.6, delay: index * 0.15 }}
-//               viewport={{ once: true }}
-//             >
-//               {service.image ? (
-//                 <div
-//                   className={css.cardImage}
-//                   style={{ backgroundImage: `url(${service.image})` }}
-//                 />
-//               ) : (
-//                 <div className={css.icon}>{service.icon}</div>
-//               )}
-
-//               <h3 className={css.cardTitle}>{service.title}</h3>
-//               <p className={css.cardDesc}>{service.description}</p>
-//             </motion.div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 import React from "react";
-import { motion } from "framer-motion";
-import css from "../../components/ServicesSection/ServicesSection.module.css";
 
-// import hunterImg from "../../assets/hunter.jpg"; // правильний імпорт картинки
-import {
-  FaTools,
-  FaTruckPickup,
-  FaBalanceScale,
-  FaOilCan,
-  FaCarSide,
-} from "react-icons/fa";
+import css from "./ServicesSection.module.css";
+import { Link, NavLink } from "react-router-dom";
 
 const services = [
   {
-    title: "Hunter 3D Alignment",
-    description:
-      "Ultimate precision with our advanced Hunter 3D alignment system for all vehicle types.",
-    image: "../../../public/hunter.jpg", // правильний шлях до картинки
-    highlight: true,
+    id: 1,
+    title: "Passenger Cars",
+    subtitle: "Precision Alignment for Everyday Reliability",
+    text: "Keep your daily drive smooth and efficient with our expert wheel alignment services for passenger cars. Proper alignment extends tire life, improves fuel economy, and enhances handling—whether it’s a compact sedan or a family SUV. Our certified technicians use cutting-edge technology to diagnose and correct any issues, ensuring your vehicle performs at its best on city streets or highways.",
+    image: "/passenger.jpg",
   },
   {
-    title: "Passenger Car Alignment",
-    description:
-      "Ensure smooth and safe driving with our precise passenger car alignment.",
-    icon: <FaTools />,
+    id: 2,
+    title: "Exotic and Sport Cars",
+    subtitle: "Elite Alignment for High-Performance Thrills",
+    text: "Exotic and sports cars like Ferraris, Lamborghinis, Porsches, McLarens deserve nothing less than perfection. Our specialized alignment services maintain razor-sharp steering, optimal grip, and peak performance. With experience handling luxury supercars, we fine-tune your ride to factory specs or custom preferences, protecting your investment and elevating your driving experience.",
+    image: "/exotic.jpg",
   },
   {
-    title: "Truck & SUV Alignment",
-    description:
-      "Professional alignment for trucks, SUVs, and heavy-duty vehicles.",
-    icon: <FaTruckPickup />,
+    id: 3,
+    title: "Heavy Duty Vehicles, Trucks, and Semis",
+    subtitle: "Robust Alignment for Heavy Haulers",
+    text: "For trucks, semis, and heavy-duty vehicles, alignment is key to safety, load stability, and reduced downtime. We offer comprehensive services tailored to commercial fleets and big rigs, using heavy-duty equipment to correct caster, camber, and toe for maximum efficiency. Minimize tire wear and fuel costs while keeping your operations rolling strong.",
+    image: "/Truck.jpg",
   },
   {
-    title: "Tire Balancing & Rotation",
-    description:
-      "Extend tire life and improve handling with our balancing and rotation services.",
-    icon: <FaBalanceScale />,
+    id: 4,
+    title: "Campers, Motor Homes, and Sprinter Vans",
+    subtitle: "Adventure-Ready Alignment for RVs and Vans",
+    text: "Embark on your next journey with confidence—our alignment experts handle campers, motor homes, and Sprinter vans with precision. We address unique challenges like extended wheelbases and heavy loads, ensuring straight tracking, better maneuverability, and longer tire life. Whether touring cross-country or weekend camping, we get your home-on-wheels aligned for the road ahead.",
+    image: "/flat.jpg",
   },
   {
-    title: "Oil Change Service",
-    description:
-      "Keep your engine healthy with our quick and reliable oil change.",
-    icon: <FaOilCan />,
+    id: 5,
+    title: "Off-Road and Modified Vehicles",
+    subtitle: "Custom Alignment for Rugged Explorers",
+    text: "Off-road enthusiasts and modified vehicle owners know that lifts, big tires, and custom suspensions demand specialized care. Our services optimize alignment for Jeeps, trucks, and 4x4s, balancing on-road comfort with off-road capability. Conquer trails without compromising safety or performance—let us dial in your setup for ultimate durability and control.",
+    image: "/off-road.jpg",
   },
   {
-    title: "Tire Mounting",
-    description: "Fast and professional tire mounting for any type of vehicle.",
-    icon: <FaCarSide />,
+    id: 6,
+    subtitle: "Other Services",
+    type: "other",
   },
 ];
 
-export default function ServicesSection({ preview = false }) {
-  const displayedServices = preview ? services.slice(0, 3) : services;
-
+export default function ServicesSection() {
   return (
-    <section className={css.services} id="services">
+    <section className={css.services}>
       <div className={css.container}>
         <h2 className={css.title}>Our Services</h2>
-        <p className={css.subtitle}>
-          Professional wheel alignment, tire and oil services using cutting-edge
-          Hunter 3D technology.
-        </p>
 
-        <div className={css.cards}>
-          {displayedServices.map((service, index) => (
-            <motion.div
-              key={index}
-              className={`${css.card} ${
-                service.highlight ? css.highlight : ""
-              }`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              viewport={{ once: true }}
-            >
-              {service.image ? (
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className={css.cardImage}
-                />
+        <ul className={css.list}>
+          {services.map((service) => (
+            <li key={service.id} className={css.item}>
+              {service.type !== "other" ? (
+                <div className={css.overlayWrapper}>
+                  <img
+                    src={service.image}
+                    alt={service.subtitle}
+                    className={css.image}
+                  />
+
+                  <div className={css.overlayText}>
+                    <h3 className={css.overlaySubtitle}>{service.subtitle}</h3>
+                    <p className={css.overlayDesc}>{service.text}</p>
+                  </div>
+                </div>
               ) : (
-                <div className={css.icon}>{service.icon}</div>
+                /* ===== 6-я КАРТОЧКА ===== */
+
+                <div className={css.otherWrapper}>
+                  <div className={css.otherOverlay}>
+                    <ul className={css.otherList}>
+                      <li style={{ animationDelay: "0ms" }}>
+                        <NavLink
+                          to="/services/suspension"
+                          className={css.otherLink}
+                        >
+                          <span className={css.serviceName}>Suspension</span>
+                          <span className={css.cta}>
+                            View details <span className={css.arrow}>→</span>
+                          </span>
+                        </NavLink>
+                      </li>
+
+                      <li style={{ animationDelay: "80ms" }}>
+                        <NavLink
+                          to="/services/brakes"
+                          className={css.otherLink}
+                        >
+                          <span className={css.serviceName}>Brakes</span>
+                          <span className={css.cta}>
+                            View details <span className={css.arrow}>→</span>
+                          </span>
+                        </NavLink>
+                      </li>
+
+                      <li style={{ animationDelay: "160ms" }}>
+                        <div className={css.otherLinkDisabled}>
+                          <span className={css.serviceName}>Tires</span>
+                          <span className={css.comingSoon}>Coming soon</span>
+                        </div>
+                        {/* <NavLink to="/services/tires" className={css.otherLink}>
+                          <span className={css.serviceName}>Tires</span>
+                          <span className={css.cta}>
+                            View details <span className={css.arrow}>→</span>
+                          </span>
+                        </NavLink> */}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               )}
-              <h3 className={css.cardTitle}>{service.title}</h3>
-              <p className={css.cardDesc}>{service.description}</p>
-            </motion.div>
+
+              <div className={css.cardBottom}>
+                <h4 className={css.cardTitle}>{service.subtitle}</h4>
+              </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

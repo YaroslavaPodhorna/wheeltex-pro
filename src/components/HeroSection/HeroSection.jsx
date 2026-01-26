@@ -1,20 +1,42 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import css from "./HeroSection.module.css";
 
 export default function HeroSection() {
+  const phoneNumber = "+14159105553";
+
   return (
     <section className={css.hero}>
+      <img
+        className={css.heroImg}
+        src="/image.jpg"
+        alt="Wheel Alignment Service"
+      />
+
       <div className={css.overlay}>
         <div className={css.content}>
-          <h1 className={css.title}>Professional Wheel Alignment</h1>
-          <p className={css.subtitle}>
-            Keep your car safe and smooth with our expert alignment and tire
-            services.
+          <h1 className={css.title}>Wheel Alignment for All Vehicle Types</h1>
+
+          <p className={css.vehicles}>
+            Cars • SUVs • Vans • Trucks • Commercial Vehicles
           </p>
-          <NavLink to="/book" className={css.cta}>
-            Book Now
-          </NavLink>
+
+          <div className={css.powered}>
+            <span className={css.powerText}>Powered by</span>
+            <img
+              className={css.logo}
+              src="/hunter-logo-white-red.png"
+              alt="Hunter Logo"
+            />
+          </div>
+
+          <p className={css.subtitle}>
+            Keep your vehicle safe, smooth, and road-ready. Expert alignment,
+            suspension & tire services using Hunter 3D technology.
+          </p>
+
+          <a href={`tel:${phoneNumber}`} className={css.cta}>
+            📞 Call Now to Book
+          </a>
         </div>
       </div>
     </section>

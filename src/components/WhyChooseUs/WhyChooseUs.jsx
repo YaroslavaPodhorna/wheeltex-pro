@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaBolt, FaAward, FaTools } from "react-icons/fa";
-import css from "../../components/WhyChooseUs/WhyChooseUs.module.css"; // Ensure this path is correct
+import css from "./WhyChooseUs.module.css";
+
 const features = [
   {
     icon: <FaCheckCircle />,
@@ -45,7 +46,9 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
             >
-              <div className={css.icon}>{item.icon}</div>
+              <div className={css.iconWrap}>
+                <div className={css.icon}>{item.icon}</div>
+              </div>
               <h3 className={css.cardTitle}>{item.title}</h3>
               <p className={css.cardDesc}>{item.desc}</p>
             </motion.div>
