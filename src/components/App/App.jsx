@@ -2,30 +2,19 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "../Header/Header.jsx";
+import SoftOpeningBanner from "../SoftOpeningBanner/SoftOpeningBanner.jsx";
 import HomePage from "../../pages/HomePage/HomePage.jsx";
 import ServicesPage from "../../pages/ServicesPage/ServicesPage.jsx";
 import SuspensionPage from "../../pages/SuspensionPage/SuspensionPage.jsx";
 import BrakesPage from "../../pages/BrakesPage/BrakesPage.jsx";
 import ScrollToTop from "../ScrollToTop/ScrollToTop.jsx";
 import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton.jsx";
-// import ServiceDetailPage from "../../pages/ServiceDetailPage/ServiceDetailPage.jsx";
-// import BookingPage from "../../pages/BookingPage/BookingPage.jsx";
-// import AdminLoginPage from "../../pages/AdminLoginPage/AdminLoginPage.jsx";
-// import AdminPage from "../../pages/AdminPage/AdminPage.jsx";
-// import PrivateRoute from "../../components/auth/PrivateRoute.jsx";
-// function ErrorBoundary({ children }) {
-//   try {
-//     return children;
-//   } catch (error) {
-//     console.error(error);
-//     return <div>Something went wrong: {error.message}</div>;
-//   }
-// }
 
 const App = () => {
   return (
     <div className="app">
       <Header />
+      <SoftOpeningBanner />
       <main className="main">
         <ScrollToTop />
         <Routes>

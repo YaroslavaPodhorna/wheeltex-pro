@@ -6,7 +6,6 @@
 }
 
 .title {
-  /* font-size: 34px; */
   font-weight: 800;
   color: #1f1f1f;
   text-align: center;
@@ -55,6 +54,16 @@
   font-size: 16px;
   font-weight: 700;
   color: #111;
+
+  /* Важно: чтобы текст не давил на иконку */
+  gap: 12px;
+}
+
+.trigger span:first-child {
+  flex: 1;
+  text-align: left;
+  white-space: normal; /* перенос строк */
+  word-break: break-word; /* перенос слов */
 }
 
 .icon {
@@ -66,6 +75,9 @@
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.12);
   transition: transform 0.4s ease, background 0.3s ease, border 0.3s ease;
+
+  /* важно, чтобы иконка не сжималась */
+  flex-shrink: 0;
 }
 
 .trigger:hover .icon {
@@ -113,6 +125,15 @@
   .trigger {
     padding: 16px 14px;
     font-size: 15px;
+  }
+
+  .trigger span:first-child {
+    font-size: 15px;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
   }
 
   .panel {

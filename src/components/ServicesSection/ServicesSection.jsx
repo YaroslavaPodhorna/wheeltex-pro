@@ -37,7 +37,7 @@ const services = [
     title: "Off-Road and Modified Vehicles",
     subtitle: "Custom Alignment for Rugged Explorers",
     text: "Off-road enthusiasts and modified vehicle owners know that lifts, big tires, and custom suspensions demand specialized care. Our services optimize alignment for Jeeps, trucks, and 4x4s, balancing on-road comfort with off-road capability. Conquer trails without compromising safety or performance—let us dial in your setup for ultimate durability and control.",
-    image: "/off-road.jpg",
+    image: "/offRoad.jpg",
   },
   {
     id: 6,
@@ -116,7 +116,7 @@ export default function ServicesSection() {
               )}
 
               <div className={css.cardBottom}>
-                <h4 className={css.cardTitle}>{service.subtitle}</h4>
+                <h4 className={css.cardTitle}>{service.title}</h4>
               </div>
             </li>
           ))}
