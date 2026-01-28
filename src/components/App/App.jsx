@@ -9,7 +9,7 @@ import SuspensionPage from "../../pages/SuspensionPage/SuspensionPage.jsx";
 import BrakesPage from "../../pages/BrakesPage/BrakesPage.jsx";
 import ScrollToTop from "../ScrollToTop/ScrollToTop.jsx";
 import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton.jsx";
-
+import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   return (
     <div className="app">
@@ -36,6 +36,7 @@ const App = () => {
           {/* Add other routes here */}
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
         </Routes>
+        <Analytics />
       </main>
       <ScrollToTopButton />
     </div>
