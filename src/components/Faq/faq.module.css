@@ -33,7 +33,9 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 18px;
   overflow: hidden;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 .accordionItem:hover {
@@ -54,16 +56,15 @@
   font-size: 16px;
   font-weight: 700;
   color: #111;
-
-  /* Важно: чтобы текст не давил на иконку */
   gap: 12px;
 }
 
 .trigger span:first-child {
   flex: 1;
   text-align: left;
-  white-space: normal; /* перенос строк */
-  word-break: break-word; /* перенос слов */
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .icon {
@@ -74,9 +75,10 @@
   justify-content: center;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s ease, background 0.3s ease, border 0.3s ease;
-
-  /* важно, чтобы иконка не сжималась */
+  transition:
+    transform 0.4s ease,
+    background 0.3s ease,
+    border 0.3s ease;
   flex-shrink: 0;
 }
 
@@ -95,24 +97,30 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(-10px);
-  transition: all 0.35s ease;
+  transform: translateY(-5px);
+
+  transition:
+    max-height 0.45s cubic-bezier(0.25, 0.8, 0.25, 1),
+    opacity 0.45s cubic-bezier(0.25, 0.8, 0.25, 1),
+    transform 0.35s ease;
   padding: 0 18px;
 }
 
-.open {
-  max-height: 999px;
+.panel.open {
+  max-height: 1200px;
   opacity: 1;
   transform: translateY(0);
   padding: 0 18px 18px;
 }
 
 .text {
-  padding: 14px 0 0;
+  padding-top: 14px;
   font-size: 15px;
   line-height: 1.7;
   color: #333;
-  white-space: pre-line;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* MOBILE */
@@ -140,12 +148,14 @@
     padding: 0 14px;
   }
 
-  .open {
+  .panel.open {
     padding: 0 14px 18px;
   }
 
   .text {
     font-size: 14px;
+    line-height: 1.75;
+    text-align: justify;
   }
 }
 
@@ -165,11 +175,12 @@
     padding: 0 16px;
   }
 
-  .open {
+  .panel.open {
     padding: 0 16px 18px;
   }
 
   .text {
     font-size: 15px;
+    line-height: 1.7;
   }
 }
