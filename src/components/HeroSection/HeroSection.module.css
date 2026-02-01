@@ -99,7 +99,9 @@
   text-decoration: none;
   border-radius: 14px;
   box-shadow: 0 16px 40px rgba(0, 87, 255, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .cta:hover {
@@ -120,5 +122,10 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (max-width: 767px) {
+  .subtitle {
+    text-align: justify;
   }
 }

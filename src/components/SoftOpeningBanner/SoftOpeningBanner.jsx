@@ -11,8 +11,8 @@ export default function SoftOpeningBanner() {
   return (
     <div className={css.banner}>
       <p className={css.text}>
-        Soft opening special offer!{" "}
-        <span>Get 20% off for our first clients until March 31, 2026.</span>
+        Soft opening special!{" "}
+        <span>Get 20% off on wheel alignment until March 31, 2026.</span>
       </p>
     </div>
   );

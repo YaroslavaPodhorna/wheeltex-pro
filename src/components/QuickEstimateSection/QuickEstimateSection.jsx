@@ -75,7 +75,7 @@ export default function QuickEstimateSection() {
       phone: Yup.string()
         .matches(
           /^[0-9+\s()-]{7,20}$/,
-          "Invalid phone. Use digits and optional +, spaces, - , ()"
+          "Invalid phone. Use digits and optional +, spaces, - , ()",
         )
         .required("Required"),
       email: Yup.string().email("Invalid email").required("Required"),
@@ -93,7 +93,7 @@ export default function QuickEstimateSection() {
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
           values,
-          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
         )
         .then(
           (result) => {
@@ -104,7 +104,7 @@ export default function QuickEstimateSection() {
           (error) => {
             console.log(error.text);
             alert("Something went wrong. Please try again.");
-          }
+          },
         );
     },
   });
@@ -112,14 +112,15 @@ export default function QuickEstimateSection() {
   return (
     <section className={css.section}>
       <div className={css.container}>
-        <h2 className={css.title}>Quick Estimate</h2>
+        <h2 className={css.title}>Get a fast and real estimate</h2>
 
         <div className={css.grid}>
           <div className={css.info}>
             <h3 className={css.infoTitle}>Get a fast estimate</h3>
             <p className={css.infoText}>
-              Tell us your car details and we will send you a quick estimate
-              within 24 hours.
+              Tell us a little bit more about your vehicle and some more details
+              about the problem! You have our promise, a quick estimate will be
+              sended to you within 24 hours.
             </p>
           </div>
 

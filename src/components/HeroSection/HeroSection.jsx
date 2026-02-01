@@ -30,8 +30,11 @@ export default function HeroSection() {
           </div>
 
           <p className={css.subtitle}>
-            Keep your vehicle safe, smooth, and road-ready. Expert alignment,
-            suspension & tire services using Hunter 3D technology.
+            At Wheeltex we are committed to perform the factory grade and custom
+            all wheel alignment programs powered by 2025 Hunter HawkEye XL 3D
+            laser Stand, all types of suspension set-ups, quick and professional
+            tire services via last gen Hunter Revolution Walk Away tire changing
+            machine and Hunter Road Force balancing machine.
           </p>
 
           <a href={`tel:${phoneNumber}`} className={css.cta}>

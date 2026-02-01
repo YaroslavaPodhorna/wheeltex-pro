@@ -7,22 +7,23 @@ const services = [
   {
     id: 1,
     title: "Passenger Cars",
-    subtitle: "Precision Alignment for Everyday Reliability",
-    text: "Keep your daily drive smooth and efficient with our expert wheel alignment services for passenger cars. Proper alignment extends tire life, improves fuel economy, and enhances handling—whether it’s a compact sedan or a family SUV. Our certified technicians use cutting-edge technology to diagnose and correct any issues, ensuring your vehicle performs at its best on city streets or highways.",
+    subtitle: "Factory Grade Wheel Alignment for Everyday Safety & Reliability",
+    text: "Keep your daily drive safe, smooth and efficient with our expert wheel alignment services for passenger cars. Proper alignment extends tire life, improves fuel economy, and enhances handling—whether it’s a compact sedan or a family SUV. Our experienced technicians use cutting-edge technology to diagnose and correct any issues, ensuring your vehicle performs at its best on city streets or highways.",
     image: "/passenger.jpg",
   },
   {
     id: 2,
-    title: "Exotic and Sport Cars",
-    subtitle: "Elite Alignment for High-Performance Thrills",
-    text: "Exotic and sports cars like Ferraris, Lamborghinis, Porsches, McLarens deserve nothing less than perfection. Our specialized alignment services maintain razor-sharp steering, optimal grip, and peak performance. With experience handling luxury supercars, we fine-tune your ride to factory specs or custom preferences, protecting your investment and elevating your driving experience.",
+    title: "High Performance and Sport Cars",
+    subtitle:
+      "Wheel Alignment Especially Tailored for Your High-Performance Thrills",
+    text: "Exotic and sports cars like Ferrari's, Lamborghini's, Porsche's, McLaren's deserve nothing less than perfection. Our specialized alignment services maintain razor-sharp steering, optimal grip, and peak performance. With experience handling luxury supercars, we fine-tune your ride to factory specs or custom preferences, protecting your investment and elevating your driving experience.",
     image: "/exotic.jpg",
   },
   {
     id: 3,
     title: "Heavy Duty Vehicles, Trucks, and Semis",
     subtitle: "Robust Alignment for Heavy Haulers",
-    text: "For trucks, semis, and heavy-duty vehicles, alignment is key to safety, load stability, and reduced downtime. We offer comprehensive services tailored to commercial fleets and big rigs, using heavy-duty equipment to correct caster, camber, and toe for maximum efficiency. Minimize tire wear and fuel costs while keeping your operations rolling strong.",
+    text: "For truck's, semi's, and heavy-duty vehicle's, impeccable wheel alignment is the key to safety, load stability, reduced downtime and money savings. We offer comprehensive services tailored to commercial fleets and big rigs, using heavy-duty dedicated equipment to correct caster, camber, and toe for maximum efficiency. Minimize tire wear and fuel costs while keeping your operations rolling strong.",
     image: "/Truck.jpg",
   },
   {
@@ -36,7 +37,7 @@ const services = [
     id: 5,
     title: "Off-Road and Modified Vehicles",
     subtitle: "Custom Alignment for Rugged Explorers",
-    text: "Off-road enthusiasts and modified vehicle owners know that lifts, big tires, and custom suspensions demand specialized care. Our services optimize alignment for Jeeps, trucks, and 4x4s, balancing on-road comfort with off-road capability. Conquer trails without compromising safety or performance—let us dial in your setup for ultimate durability and control.",
+    text: "Off-road enthusiasts and customized vehicle owners know that lifts, big tires, and custom suspensions demand specialized care. Our services optimize alignment for Jeeps, trucks, and 4x4s, balancing on-road comfort with off-road capability. Conquer trails without compromising safety or performance—let us dial in your setup for ultimate durability and control.",
     image: "/offRoad.jpg",
   },
   {

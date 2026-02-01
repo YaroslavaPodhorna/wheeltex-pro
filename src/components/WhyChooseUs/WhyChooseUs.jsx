@@ -22,7 +22,7 @@ const features = [
   {
     icon: <FaTools />,
     title: "Modern Equipment",
-    desc: "We use state-of-the-art Hunter technology and tools.",
+    desc: "SOTA Hunter Engineering machines and top ranked professional tools.",
   },
 ];
 
