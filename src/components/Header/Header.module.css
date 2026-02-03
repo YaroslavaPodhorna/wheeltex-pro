@@ -1,5 +1,4 @@
-/* ================= HEADER ================= */
-.header {
+/* .header {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -19,7 +18,6 @@
   padding: 0 16px;
 }
 
-/* ================= LOGO ================= */
 .logoWrapper {
   display: flex;
   align-items: center;
@@ -64,7 +62,6 @@
   display: block;
 }
 
-/* ================= NAV MOBILE ================= */
 .nav {
   position: fixed;
   top: 0;
@@ -77,7 +74,7 @@
   padding-top: 80px;
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 10000; /* ✅ Вище за backdrop */
+  z-index: 10000;
   display: flex;
   flex-direction: column;
   box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
@@ -88,7 +85,6 @@
   transform: translateX(0);
 }
 
-/* ================= NAV LINKS ================= */
 .navLinks {
   display: flex;
   flex-direction: column;
@@ -129,7 +125,6 @@
   border-radius: 0 4px 4px 0;
 }
 
-/* ================= MOBILE CONTACTS ================= */
 .mobileContacts {
   margin-top: auto;
   padding-top: 24px;
@@ -157,7 +152,6 @@
   color: #e10600;
 }
 
-/* ================= DESKTOP CONTACTS ================= */
 .contacts {
   display: none;
   align-items: center;
@@ -181,13 +175,12 @@
   font-size: 13px;
 }
 
-/* ================= BURGER ================= */
 .burgerWrapper {
   display: none;
   align-items: center;
   gap: 6px;
   position: relative;
-  z-index: 10001; /* ✅ Найвищий z-index */
+  z-index: 10001;
 }
 
 .burger {
@@ -247,32 +240,31 @@
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* ================= BACKDROP ================= */
 .backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 9998; /* ✅ Ще нижче */
+  z-index: 9998;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none; /* ✅ КЛЮЧОВЕ - не блокує кліки */
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  pointer-events: none;
 }
 
 .backdropOpen {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto; /* ✅ Включаємо кліки тільки коли відкрито */
+  pointer-events: auto;
 }
 
-/* ================= MOBILE (max-width: 767px) ================= */
 @media (max-width: 767px) {
   .burgerWrapper {
     display: flex;
   }
 }
 
-/* ================= TABLET (768px+) ================= */
 @media (min-width: 768px) {
   .headerInner {
     height: 76px;
@@ -373,7 +365,6 @@
   }
 }
 
-/* ================= DESKTOP (1024px+) ================= */
 @media (min-width: 1024px) {
   .headerInner {
     height: 80px;
@@ -409,5 +400,236 @@
 
   .schedule {
     font-size: 14px;
+  }
+} */
+/* ================= HEADER ================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10000; /* Поднял выше, чтобы не перекрывали другие элементы */
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.headerInner {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================= LOGO (Синхронизация с Футером) ================= */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 50px; /* Размер как в футере */
+  height: 50px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logoMain {
+  font-family: "Montserrat", sans-serif; /* Шрифт как в футере */
+  font-size: 22px; /* Размер как в футере */
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.logoRed {
+  color: #ff4d4d; /* Тот же красный, что в футере */
+}
+
+.logoSub {
+  font-size: 10px;
+  color: #666;
+  font-weight: 500;
+  margin-top: 2px;
+  line-height: 1.1;
+}
+.logoSubAccent {
+  display: block;
+}
+/* ================= NAV (MOBILE) ================= */
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: #fff;
+  padding: 100px 24px 40px;
+  transform: translateX(105%); /* Скрыт */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+  overflow-y: auto;
+}
+
+.navOpen {
+  transform: translateX(0);
+}
+
+/* ================= NAV LINKS ================= */
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navLink,
+.navLinkActive {
+  padding: 16px 20px;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.navLinkActive {
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+}
+
+/* ================= CONTACTS ================= */
+.mobileContacts {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contacts {
+  display: none;
+  align-items: center;
+  gap: 20px;
+}
+
+.contacts a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+/* ================= BURGER (FIXED) ================= */
+.burgerWrapper {
+  display: flex;
+  z-index: 10005;
+}
+
+.burger {
+  width: 32px;
+  height: 22px;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #1a1a1a;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.burgerActive span:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+.burgerActive span:nth-child(2) {
+  opacity: 0;
+}
+.burgerActive span:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* ================= BACKDROP ================= */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.backdropOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ================= DESKTOP (768px+) ================= */
+@media (min-width: 768px) {
+  .burgerWrapper {
+    display: none !important;
+  }
+
+  .nav {
+    position: static !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    z-index: auto !important;
+  }
+
+  .navLinks {
+    flex-direction: row !important;
+    gap: 32px;
+  }
+
+  .navLink,
+  .navLinkActive {
+    padding: 0;
+    font-size: 16px;
+    background: transparent !important;
+  }
+
+  .navLinkActive {
+    color: #ff4d4d;
+    box-shadow: 0 2px 0 #ff4d4d;
+    border-radius: 0;
+  }
+
+  .mobileContacts {
+    display: none !important;
+  }
+  .contacts {
+    display: flex !important;
   }
 }

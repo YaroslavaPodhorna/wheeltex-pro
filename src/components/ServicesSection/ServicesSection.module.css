@@ -9,9 +9,13 @@
 }
 
 .title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  color: #1a1a1a;
   text-align: center;
-  margin-bottom: 40px;
-  color: #000;
 }
 
 .cardBottom {
@@ -121,7 +125,9 @@
   transform: translateY(20px);
 
   visibility: hidden;
-  transition: opacity 0.45s ease, transform 0.45s ease,
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
     visibility 0s linear 0.45s;
 }
 
@@ -137,6 +143,7 @@
   font-weight: 700;
   color: #fff;
   margin: 0;
+  text-align: center;
 }
 
 .overlayDesc {
@@ -146,6 +153,7 @@
   margin: 0;
   max-height: 220px;
   overflow: auto;
+  text-align: justify;
 }
 
 /* ========================= */
@@ -195,7 +203,9 @@
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.12);
   text-decoration: none;
-  transition: background 0.25s ease, transform 0.25s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .otherLink:hover {

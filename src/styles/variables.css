@@ -1,3 +1,22 @@
+/* :root {
+
+  --blue: #2b6cff;
+  --blue-light: #00c6ff;
+  --text-main: #111;
+  --text-muted: #444;
+  --border-light: rgba(43, 108, 255, 0.18);
+
+  
+  --bg-soft: #f7f9ff;
+
+  
+  --radius-lg: 20px;
+  --radius-md: 16px;
+
+ 
+  --shadow-soft: 0 12px 30px rgba(43, 108, 255, 0.12);
+  --shadow-hover: 0 16px 34px rgba(43, 108, 255, 0.16);
+} */
 :root {
   /* Colors */
   --blue: #2b6cff;
@@ -6,14 +25,13 @@
   --text-muted: #444;
   --border-light: rgba(43, 108, 255, 0.18);
 
-  /* Backgrounds */
-  --bg-soft: #f7f9ff;
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-blur: blur(12px);
 
-  /* Radius */
+  /* Radius & Shadows */
   --radius-lg: 20px;
   --radius-md: 16px;
-
-  /* Shadows */
   --shadow-soft: 0 12px 30px rgba(43, 108, 255, 0.12);
   --shadow-hover: 0 16px 34px rgba(43, 108, 255, 0.16);
 }

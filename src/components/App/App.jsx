@@ -9,7 +9,10 @@ import SuspensionPage from "../../pages/SuspensionPage/SuspensionPage.jsx";
 import BrakesPage from "../../pages/BrakesPage/BrakesPage.jsx";
 import ScrollToTop from "../ScrollToTop/ScrollToTop.jsx";
 import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton.jsx";
+import PrivacyPolicy from "../../pages/PrivacyPolicy/PrivacyPolicy.jsx";
+import CookieBanner from "../CookieBanner/CookieBanner.jsx";
 import { Analytics } from "@vercel/analytics/react";
+
 const App = () => {
   return (
     <div className="app">
@@ -22,6 +25,8 @@ const App = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/suspension" element={<SuspensionPage />} />
           <Route path="/services/brakes" element={<BrakesPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
           {/* <Route path="/services/:id" element={<ServiceDetailPage />} /> */}
           {/* <Route path="/book" element={<BookingPage />} /> */}
           {/* Admin routes */}
@@ -39,6 +44,7 @@ const App = () => {
         <Analytics />
       </main>
       <ScrollToTopButton />
+      <CookieBanner />
     </div>
   );
 };

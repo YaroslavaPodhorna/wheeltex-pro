@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -69,6 +70,7 @@ export default function QuickEstimateSection() {
       carYear: "",
       serviceType: "",
       message: "",
+      privacy: false,
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Required"),
@@ -86,6 +88,10 @@ export default function QuickEstimateSection() {
         .required("Required"),
       serviceType: Yup.string().required("Required"),
       message: Yup.string(),
+      privacy: Yup.boolean().oneOf(
+        [true],
+        "You must accept the Privacy Policy",
+      ),
     }),
     onSubmit: (values, { resetForm }) => {
       emailjs
@@ -112,15 +118,15 @@ export default function QuickEstimateSection() {
   return (
     <section className={css.section}>
       <div className={css.container}>
-        <h2 className={css.title}>Get a fast and real estimate</h2>
+        <h2 className={css.title}>Get a quick quote</h2>
 
         <div className={css.grid}>
           <div className={css.info}>
-            <h3 className={css.infoTitle}>Get a fast estimate</h3>
+            {/* <h3 className={css.infoTitle}>Get a fast estimate</h3> */}
             <p className={css.infoText}>
               Tell us a little bit more about your vehicle and some more details
               about the problem! You have our promise, a quick estimate will be
-              sended to you within 24 hours.
+              sent to you within 24 hours.
             </p>
           </div>
 
@@ -156,6 +162,7 @@ export default function QuickEstimateSection() {
               <label>Email</label>
               <input
                 name="email"
+                aria-invalid={formik.errors.email ? "true" : "false"}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.email}
@@ -180,7 +187,6 @@ export default function QuickEstimateSection() {
                   <option key={b} value={b} />
                 ))}
               </datalist>
-
               {formik.errors.carBrand && formik.touched.carBrand && (
                 <div className={css.error}>{formik.errors.carBrand}</div>
               )}
@@ -217,7 +223,6 @@ export default function QuickEstimateSection() {
                   <option key={y} value={y} />
                 ))}
               </datalist>
-
               {formik.errors.carYear && formik.touched.carYear && (
                 <div className={css.error}>{formik.errors.carYear}</div>
               )}
@@ -237,7 +242,6 @@ export default function QuickEstimateSection() {
                 <option value="Brakes">Brakes</option>
                 <option value="Tire">Tire</option>
               </select>
-
               {formik.errors.serviceType && formik.touched.serviceType && (
                 <div className={css.error}>{formik.errors.serviceType}</div>
               )}
@@ -255,8 +259,44 @@ export default function QuickEstimateSection() {
               />
             </div>
 
+            {/* PRIVACY CHECKBOX */}
+            <div className={css.privacyRow}>
+              <label className={css.checkboxLabel}>
+                <input
+                  type="checkbox"
+                  name="privacy"
+                  checked={formik.values.privacy}
+                  onChange={formik.handleChange}
+                />
+
+                <span className={css.checkboxText}>
+                  By submitting this form, I agree to the{" "}
+                  <Link
+                    to="/privacy-policy"
+                    target="_blank"
+                    className={css.policyLink}
+                    onClick={() => {
+                      // Принудительно записываем, чтобы новая вкладка уже видела "true"
+                      localStorage.setItem("cookiesAccepted", "true");
+
+                      // Генерируем событие storage, чтобы баннер в текущей вкладке тоже скрылся
+                      window.dispatchEvent(new Event("storage"));
+                    }}
+                  >
+                    Privacy Policy
+                  </Link>
+                </span>
+              </label>
+              {formik.errors.privacy && formik.touched.privacy && (
+                <div className={css.error}>{formik.errors.privacy}</div>
+              )}
+            </div>
             <div className={css.btnRow}>
-              <button className={css.btn} type="submit">
+              <button
+                className={css.btn}
+                type="submit"
+                disabled={!formik.isValid || formik.isSubmitting}
+              >
                 Get Estimate
               </button>
 

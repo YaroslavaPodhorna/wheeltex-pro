@@ -1,0 +1,189 @@
+.section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center;
+  background: linear-gradient(90deg, #2b6cff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.updated {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  text-align: left;
+  background: linear-gradient(90deg, #2b6cff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.text_intro {
+  margin-bottom: 16px;
+}
+
+.contactInfo {
+  margin-top: 12px;
+  line-height: 1.8;
+}
+
+ul {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #333;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  color: #0057ff;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.cookieBanner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 1000;
+  border: 1px solid #eee;
+  animation: slideUp 0.5s ease-out;
+}
+
+.cookieBanner p {
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.4;
+  color: #555;
+}
+
+.cookieBtn {
+  background: linear-gradient(90deg, #2b6cff, #00c6ff);
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.cookieBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(43, 108, 255, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding: 60px 16px;
+  }
+  h2 {
+    font-size: 14px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  p,
+  li {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 639px) {
+  .section {
+    padding: 40px 12px;
+  }
+  .container {
+    padding: 30px 20px;
+  }
+  h2 {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  p,
+  li {
+    font-size: 12px;
+  }
+  .contactInfo {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  ul {
+    padding-left: 18px;
+  }
+  .cookieBanner {
+    flex-direction: column;
+    text-align: center;
+    bottom: 10px;
+  }
+}

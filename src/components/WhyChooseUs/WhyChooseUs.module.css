@@ -1,46 +1,42 @@
 .why {
-  padding: 80px 0;
+  padding: 20px 0 clamp(40px, 8vw, 80px);
   text-align: center;
-  /* background: radial-gradient(
-    circle at top,
-    #ffffff 0%,
-    #f6f6f6 60%,
-    #f0f0f0 100%
-  ); */
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 18px;
+  padding: 0 20px;
 }
 
 .title {
-  /* font-size: 38px; */
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(28px, 4vw, 36px);
   font-weight: 800;
   letter-spacing: -0.5px;
-  margin-bottom: 14px;
-  color: #111;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+  text-align: center;
 }
 
 .subtitle {
   font-size: 16px;
-  color: #555;
-  max-width: 640px;
-  margin: 0 auto 48px;
-  line-height: 1.7;
-  opacity: 0.9;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  /* opacity: 0.9; */
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 26px;
+  gap: 24px;
 }
 
 /* ---------------- CARD ---------------- */
 .card {
-  background: #fff;
+  /* background: #fff;
   border-radius: 22px;
   padding: 34px 26px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
@@ -48,16 +44,31 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease; */
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 28px;
+  /* Тень делаем мягче, чтобы не грязнить дизайн */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 77, 77, 0.2);
 }
 
-/* ---------------- ICON ---------------- */
-.iconWrap {
+/* .iconWrap {
   width: 84px;
   height: 84px;
   border-radius: 50%;
@@ -76,7 +87,9 @@
 .icon {
   font-size: 32px;
   color: #e10600;
-  transition: transform 0.35s ease, color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
 }
 
 .card:hover .icon {
@@ -84,7 +97,7 @@
   color: #0057ff;
 }
 
-/* ---------------- TEXT ---------------- */
+
 .cardTitle {
   font-size: 20px;
   font-weight: 800;
@@ -98,9 +111,10 @@
   line-height: 1.7;
   max-width: 360px;
   margin: 0 auto;
+  align-items: center;
 }
 
-/* ---------------- TABLET ---------------- */
+
 @media (min-width: 768px) {
   .why {
     padding: 100px 0;
@@ -129,7 +143,7 @@
   }
 }
 
-/* ---------------- DESKTOP ---------------- */
+
 @media (min-width: 1200px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
@@ -137,5 +151,68 @@
 
   .container {
     padding: 0 28px;
+  }
+} */
+/* ---------------- ICON ---------------- */
+.iconWrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* Используем твой красный акцент */
+  background: rgba(255, 77, 77, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.icon {
+  font-size: 30px;
+  color: #ff4d4d; /* Тот же красный, что в лого */
+  transition: transform 0.3s ease;
+}
+
+.card:hover .iconWrap {
+  background: #ff4d4d;
+}
+
+.card:hover .icon {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ---------------- TEXT ---------------- */
+.cardTitle {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.cardDesc {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+@media (min-width: 768px) {
+  .why {
+    padding-top: 40px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    padding: 30px 20px; /* Немного компактнее для 4-х в ряд */
   }
 }

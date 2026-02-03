@@ -86,6 +86,7 @@
   line-height: 1.6;
   color: #ddd;
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
 /* ================= CTA ================= */
@@ -126,6 +127,6 @@
 }
 @media (max-width: 767px) {
   .subtitle {
-    text-align: justify;
+    text-align: center;
   }
 }

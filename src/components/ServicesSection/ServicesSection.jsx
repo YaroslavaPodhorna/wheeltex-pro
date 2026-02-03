@@ -16,7 +16,7 @@ const services = [
     title: "High Performance and Sport Cars",
     subtitle:
       "Wheel Alignment Especially Tailored for Your High-Performance Thrills",
-    text: "Exotic and sports cars like Ferrari's, Lamborghini's, Porsche's, McLaren's deserve nothing less than perfection. Our specialized alignment services maintain razor-sharp steering, optimal grip, and peak performance. With experience handling luxury supercars, we fine-tune your ride to factory specs or custom preferences, protecting your investment and elevating your driving experience.",
+    text: "Exotic and sports cars like Ferraris, Lamborghinis, Porsches, McLarens deserve nothing less than perfection. Our specialized alignment services maintain razor-sharp steering, optimal grip, and peak performance. With experience handling luxury supercars, we fine-tune your ride to factory specs or custom preferences, protecting your investment and elevating your driving experience.",
     image: "/exotic.jpg",
   },
   {

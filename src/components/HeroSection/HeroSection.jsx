@@ -25,7 +25,7 @@ export default function HeroSection() {
             <img
               className={css.logo}
               src="/hunter-logo-white-red.png"
-              alt="Hunter Logo"
+              alt="Hunter Engineering Company - Professional alignment equipment"
             />
           </div>
 
