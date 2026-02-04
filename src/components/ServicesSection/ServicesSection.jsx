@@ -1,7 +1,7 @@
 import React from "react";
 
 import css from "./ServicesSection.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const services = [
   {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -271,9 +271,8 @@ export default function QuickEstimateSection() {
 
                 <span className={css.checkboxText}>
                   By submitting this form, I agree to the{" "}
-                  <Link
+                  <NavLink
                     to="/privacy-policy"
-                    target="_blank"
                     className={css.policyLink}
                     onClick={() => {
                       // Принудительно записываем, чтобы новая вкладка уже видела "true"
@@ -284,7 +283,7 @@ export default function QuickEstimateSection() {
                     }}
                   >
                     Privacy Policy
-                  </Link>
+                  </NavLink>
                 </span>
               </label>
               {formik.errors.privacy && formik.touched.privacy && (

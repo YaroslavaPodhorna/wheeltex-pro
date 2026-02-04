@@ -104,7 +104,7 @@
 //   );
 // }
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import logo from "../../assets/Logo.jpg";
 import css from "./Footer.module.css";
@@ -176,19 +176,31 @@ export default function Footer() {
         <div className={css.mapBlock}>
           <div className={css.mapWrapper}>
             <iframe
-              title="Our Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.4636384234!2d-121.2721!3d38.6012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDM2JzA0LjMiTiAxMjHCsDE2JzE5LjYiVw!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+              title="WheelTEX Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.169420622727!2d-121.26300641175595!3d38.57594619906857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ae9f5bf575d77%3A0xd4ade9cb00e800e4!2sWheelTEX%20Alignment!5e0!3m2!1sen!2sus!4v1738163828489!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
               loading="lazy"
-            />
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
-          <Link
+          {/* <div className={css.mapWrapper}>
+            <iframe
+              title="WheelTEX Location"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.169420622727!2d-121.26300641175595!3d38.57594619906857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ae9f5bf575d77%3A0xd4ade9cb00e800e4!2sWheelTEX%20Alignment!5e0!3m2!1sen!2sus!4v1770163828489!5m2!1sen!2sus" 
+            />
+          </div> */}
+          <NavLink
             to="/privacy-policy"
-            target="_blank"
             className={css.privacyLink}
             onClick={handlePrivacyClick}
           >
             Privacy Policy
-          </Link>
+          </NavLink>
         </div>
       </div>
 
