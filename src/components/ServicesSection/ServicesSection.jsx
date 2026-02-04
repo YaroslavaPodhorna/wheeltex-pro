@@ -51,7 +51,7 @@ export default function ServicesSection() {
   return (
     <section className={css.services}>
       <div className={css.container}>
-        <h2 className={css.title}>Our Services</h2>
+        <h2 className={css.title}>HD Alignment</h2>
 
         <ul className={css.list}>
           {services.map((service) => (
