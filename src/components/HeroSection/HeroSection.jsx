@@ -1,8 +1,16 @@
 import React from "react";
+import ReactGA from "react-ga4";
 import css from "./HeroSection.module.css";
 
 export default function HeroSection() {
   const phoneNumber = "+14159105553";
+  const handleCallClick = () => {
+    ReactGA.event({
+      category: "Conversion",
+      action: "phone_call_click",
+      label: "Hero Section Button",
+    });
+  };
 
   return (
     <section className={css.hero}>
@@ -31,7 +39,11 @@ export default function HeroSection() {
             machine and Hunter Road Force balancing machine.
           </p>
 
-          <a href={`tel:${phoneNumber}`} className={css.cta}>
+          <a
+            href={`tel:${phoneNumber}`}
+            className={css.cta}
+            onClick={handleCallClick}
+          >
             📞 Call Now to Book
           </a>
         </div>
