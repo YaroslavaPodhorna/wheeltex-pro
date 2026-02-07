@@ -6,12 +6,6 @@ export default function HeroSection() {
 
   return (
     <section className={css.hero}>
-      <img
-        className={css.heroImg}
-        src="/image.jpg"
-        alt="Wheel Alignment Service"
-      />
-
       <div className={css.overlay}>
         <div className={css.content}>
           <h1 className={css.title}>Wheel Alignment for All Vehicle Types</h1>
