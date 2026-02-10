@@ -16,10 +16,12 @@ export default function HeroSection() {
     <section className={css.hero}>
       <div className={css.overlay}>
         <div className={css.content}>
-          <h1 className={css.title}>Wheel Alignment for All Vehicle Types</h1>
+          <h1 className={css.title}>
+            Wheel Alignment in Rancho Cordova, CA for All Vehicle Types
+          </h1>
 
           <p className={css.vehicles}>
-            Cars • SUVs • Vans • Trucks • Commercial Vehicles
+            Cars • SUVs • Vans • Trucks • Commercial Vehicles in Rancho Cordova
           </p>
 
           <div className={css.powered}>
@@ -32,11 +34,14 @@ export default function HeroSection() {
           </div>
 
           <p className={css.subtitle}>
-            At Wheeltex we are committed to perform the factory grade and custom
-            all wheel alignment programs powered by 2025 Hunter HawkEye XL 3D
-            laser Stand, all types of suspension set-ups, quick and professional
-            tire services via last gen Hunter Revolution Walk Away tire changing
-            machine and Hunter Road Force balancing machine.
+            We provide professional wheel alignment services in Rancho Cordova,
+            CA using the 2025 Hunter HawkEye XL 3D laser system for cars, SUVs,
+            trucks, and commercial vehicles. Another key feature of WheelTEX is
+            a dealer quality suspension services, custom builds and individualy
+            crafted set-ups.
+            {/* quick and professional tire services via last gen Hunter Revolution
+            Walk Away tire changing machine and Hunter Road Force balancing
+            machine. */}
           </p>
 
           <a

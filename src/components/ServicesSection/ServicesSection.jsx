@@ -8,6 +8,7 @@ const services = [
     id: 1,
     title: "Passenger Cars",
     subtitle: "Factory Grade Wheel Alignment for Everyday Safety & Reliability",
+    alt: "Wheel alignment for passenger cars in Rancho Cordova, CA",
     text: "Keep your daily drive safe, smooth and efficient with our expert wheel alignment services for passenger cars. Proper alignment extends tire life, improves fuel economy, and enhances handling—whether it’s a compact sedan or a family SUV. Our experienced technicians use cutting-edge technology to diagnose and correct any issues, ensuring your vehicle performs at its best on city streets or highways.",
     image: "/passenger.jpg",
   },
@@ -16,6 +17,7 @@ const services = [
     title: "High Performance and Sport Cars",
     subtitle:
       "Wheel Alignment Especially Tailored for Your High-Performance Thrills",
+    alt: "Wheel alignment for high performance and sport cars in Rancho Cordova, CA",
     text: "Exotic and sports cars like Ferraris, Lamborghinis, Porsches, McLarens deserve nothing less than perfection. Our specialized alignment services maintain razor-sharp steering, optimal grip, and peak performance. With experience handling luxury supercars, we fine-tune your ride to factory specs or custom preferences, protecting your investment and elevating your driving experience.",
     image: "/exotic.jpg",
   },
@@ -23,6 +25,7 @@ const services = [
     id: 3,
     title: "Heavy Duty Vehicles, Trucks, and Semis",
     subtitle: "Robust Alignment for Heavy Haulers",
+    alt: "Wheel alignment for heavy duty vehicles, trucks, and semis in Rancho Cordova, CA",
     text: "For truck's, semi's, and heavy-duty vehicle's, impeccable wheel alignment is the key to safety, load stability, reduced downtime and money savings. We offer comprehensive services tailored to commercial fleets and big rigs, using heavy-duty dedicated equipment to correct caster, camber, and toe for maximum efficiency. Minimize tire wear and fuel costs while keeping your operations rolling strong.",
     image: "/Truck.jpg",
   },
@@ -30,6 +33,7 @@ const services = [
     id: 4,
     title: "Campers, Motor Homes, and Sprinter Vans",
     subtitle: "Adventure-Ready Alignment for RVs and Vans",
+    alt: "Wheel alignment for campers, motor homes, and sprinter vans in Rancho Cordova, CA",
     text: "Embark on your next journey with confidence—our alignment experts handle campers, motor homes, and Sprinter vans with precision. We address unique challenges like extended wheelbases and heavy loads, ensuring straight tracking, better maneuverability, and longer tire life. Whether touring cross-country or weekend camping, we get your home-on-wheels aligned for the road ahead.",
     image: "/flat.jpg",
   },
@@ -37,6 +41,7 @@ const services = [
     id: 5,
     title: "Off-Road and Modified Vehicles",
     subtitle: "Custom Alignment for Rugged Explorers",
+    alt: "Wheel alignment for off-road and modified vehicles in Rancho Cordova, CA",
     text: "Off-road enthusiasts and customized vehicle owners know that lifts, big tires, and custom suspensions demand specialized care. Our services optimize alignment for Jeeps, trucks, and 4x4s, balancing on-road comfort with off-road capability. Conquer trails without compromising safety or performance—let us dial in your setup for ultimate durability and control.",
     image: "/offRoad.jpg",
   },
@@ -51,7 +56,9 @@ export default function ServicesSection() {
   return (
     <section className={css.services}>
       <div className={css.container}>
-        <h2 className={css.title}>HD Alignment</h2>
+        <h2 className={css.title}>
+          Wheel Alignment Services in Rancho Cordova, CA
+        </h2>
 
         <ul className={css.list}>
           {services.map((service) => (
@@ -60,7 +67,7 @@ export default function ServicesSection() {
                 <div className={css.overlayWrapper}>
                   <img
                     src={service.image}
-                    alt={service.subtitle}
+                    alt={service.alt}
                     className={css.image}
                   />
 
@@ -80,7 +87,9 @@ export default function ServicesSection() {
                           to="/services/suspension"
                           className={css.otherLink}
                         >
-                          <span className={css.serviceName}>Suspension</span>
+                          <span className={css.serviceName}>
+                            Suspension Repair{" "}
+                          </span>
                           <span className={css.cta}>
                             View details <span className={css.arrow}>→</span>
                           </span>
@@ -92,7 +101,9 @@ export default function ServicesSection() {
                           to="/services/brakes"
                           className={css.otherLink}
                         >
-                          <span className={css.serviceName}>Brakes</span>
+                          <span className={css.serviceName}>
+                            Brakes Service
+                          </span>
                           <span className={css.cta}>
                             View details <span className={css.arrow}>→</span>
                           </span>
