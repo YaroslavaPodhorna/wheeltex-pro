@@ -71,17 +71,18 @@
   color: var(--blue-light);
 }
 .schedule {
+  color: #cccccc;
   font-size: 14px;
-  font-weight: 500;
-  color: #d0d0d0;
+
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
 .schedule strong {
-  font-weight: 700;
-  color: #ffffff;
+  color: inherit;
+  font-weight: inherit;
 }
 
 .schedule::before {
