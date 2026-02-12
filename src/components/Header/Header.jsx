@@ -80,14 +80,20 @@ export default function Header() {
               >
                 ✉ wheeltx@gmail.com
               </a>
-              <span>⏰ Mon–Sat 10:00–20:00</span>
+
+              <span className={css.schedule}>
+                ⏰ Open <strong>Mon–Sat</strong> · <strong>10 AM–8 PM</strong>
+              </span>
             </div>
           </nav>
 
           {/* DESKTOP CONTACTS */}
           <div className={css.contacts}>
             <a href="tel:+14159105553">📞 +1 415 910 5553</a>
-            <span className={css.schedule}>⏰ Mon–Sat 10:00–20:00</span>
+
+            <span className={css.schedule}>
+              ⏰ Open <strong>Mon–Sat</strong> · <strong>10 AM–8 PM</strong>
+            </span>
           </div>
 
           {/* BURGER */}

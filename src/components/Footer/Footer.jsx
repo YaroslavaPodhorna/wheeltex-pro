@@ -143,7 +143,10 @@ export default function Footer() {
           <div className={css.contactLinks}>
             <a href="tel:+14159105553">📞 +1 415 910 5553</a>
             <a href="mailto:wheeltx@gmail.com">✉ wheeltx@gmail.com</a>
-            <span>⏰ Mon–Sat: 10:00–20:00</span>
+            {/* <span>⏰ Mon–Sat: 10:00–20:00</span> */}
+            <span className={css.schedule}>
+              Open <strong>Mon–Sat</strong> · <strong>10 AM–8 PM</strong>
+            </span>
             <span className={css.address}>
               📍 3501 Sunrise Blvd, STE 5, Rancho Cordova, CA 95742
             </span>

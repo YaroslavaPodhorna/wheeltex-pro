@@ -70,6 +70,23 @@
 .contactLinks a:hover {
   color: var(--blue-light);
 }
+.schedule {
+  font-size: 14px;
+  font-weight: 500;
+  color: #d0d0d0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.schedule strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.schedule::before {
+  content: "⏰";
+}
 
 /* --- SOCIALS --- */
 .socialsRow {

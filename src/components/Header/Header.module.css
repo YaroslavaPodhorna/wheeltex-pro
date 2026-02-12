@@ -535,6 +535,20 @@
   text-decoration: none;
   color: #1a1a1a;
 }
+.schedule {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.schedule strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
 
 /* ================= BURGER (FIXED) ================= */
 .burgerWrapper {
